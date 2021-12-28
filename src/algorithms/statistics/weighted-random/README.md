@@ -1,4 +1,4 @@
-# Weighted Random
+# Weighted Random 权重随机
 
 ![Weighted Random](images/cover.png)
 

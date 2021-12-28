@@ -1,4 +1,4 @@
-# Matrices
+# Matrices 矩阵
 
 In mathematics, a **matrix** (plural **matrices**) is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns. For example, the dimension of the matrix below is `2 × 3` (read "two by three"), because there are two rows and three columns:
 
@@ -60,4 +60,4 @@ We put a "T" in the top right-hand corner to mean transpose:
 ## References
 
 - [Matrices on MathIsFun](https://www.mathsisfun.com/algebra/matrix-introduction.html)
-- [Matrix on Wikipedia](https://en.wikipedia.org/wiki/Matrix_(mathematics))
+- [Matrix on Wikipedia](<https://en.wikipedia.org/wiki/Matrix_(mathematics)>)

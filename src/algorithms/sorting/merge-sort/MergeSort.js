@@ -10,7 +10,7 @@ export default class MergeSort extends Sort {
       return originalArray;
     }
 
-    // Split array on two halves.
+    // Split array on two halves. 切分
     const middleIndex = Math.floor(originalArray.length / 2);
     const leftArray = originalArray.slice(0, middleIndex);
     const rightArray = originalArray.slice(middleIndex, originalArray.length);
@@ -19,7 +19,7 @@ export default class MergeSort extends Sort {
     const leftSortedArray = this.sort(leftArray);
     const rightSortedArray = this.sort(rightArray);
 
-    // Merge two sorted arrays into one.
+    // Merge two sorted arrays into one. 合并
     return this.mergeSortedArrays(leftSortedArray, rightSortedArray);
   }
 

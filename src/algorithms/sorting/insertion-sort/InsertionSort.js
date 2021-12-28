@@ -12,19 +12,16 @@ export default class InsertionSort extends Sort {
       this.callbacks.visitingCallback(array[i]);
 
       // Check if previous element is greater than current element.
-      // If so, swap the two elements.
+      // If so, swap the two elements.若后者大于前者则交换
       while (
-        array[currentIndex - 1] !== undefined
-        && this.comparator.lessThan(array[currentIndex], array[currentIndex - 1])
+        array[currentIndex - 1] !== undefined &&
+        this.comparator.lessThan(array[currentIndex], array[currentIndex - 1])
       ) {
         // Call visiting callback.
         this.callbacks.visitingCallback(array[currentIndex - 1]);
 
         // Swap the elements.
-        [
-          array[currentIndex - 1],
-          array[currentIndex],
-        ] = [
+        [array[currentIndex - 1], array[currentIndex]] = [
           array[currentIndex],
           array[currentIndex - 1],
         ];

@@ -10,6 +10,7 @@
  */
 function reverseTraversalRecursive(node, callback) {
   if (node) {
+    // 先递归后处理，利用调用堆栈
     reverseTraversalRecursive(node.next, callback);
     callback(node.value);
   }

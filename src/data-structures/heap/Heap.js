@@ -10,10 +10,11 @@ export default class Heap {
    */
   constructor(comparatorFunction) {
     if (new.target === Heap) {
+      // 作为基类，不能直接使用
       throw new TypeError('Cannot construct Heap instance directly');
     }
 
-    // Array representation of the heap.
+    // Array representation of the heap. 堆是一种完全二叉树，其索引关系有一定规律，可以用数组来呈现
     this.heapContainer = [];
     this.compare = new Comparator(comparatorFunction);
   }
@@ -23,7 +24,7 @@ export default class Heap {
    * @return {number}
    */
   getLeftChildIndex(parentIndex) {
-    return (2 * parentIndex) + 1;
+    return 2 * parentIndex + 1;
   }
 
   /**
@@ -31,7 +32,7 @@ export default class Heap {
    * @return {number}
    */
   getRightChildIndex(parentIndex) {
-    return (2 * parentIndex) + 2;
+    return 2 * parentIndex + 2;
   }
 
   /**
@@ -158,7 +159,7 @@ export default class Heap {
 
       // If we need to remove last child in the heap then just remove it.
       // There is no need to heapify the heap afterwards.
-      if (indexToRemove === (this.heapContainer.length - 1)) {
+      if (indexToRemove === this.heapContainer.length - 1) {
         this.heapContainer.pop();
       } else {
         // Move last element in heap to the vacant (removed) position.
@@ -170,11 +171,12 @@ export default class Heap {
         // If there is no parent or parent is in correct order with the node
         // we're going to delete then heapify down. Otherwise heapify up.
         if (
-          this.hasLeftChild(indexToRemove)
-          && (
-            !parentItem
-            || this.pairIsInCorrectOrder(parentItem, this.heapContainer[indexToRemove])
-          )
+          this.hasLeftChild(indexToRemove) &&
+          (!parentItem ||
+            this.pairIsInCorrectOrder(
+              parentItem,
+              this.heapContainer[indexToRemove]
+            ))
         ) {
           this.heapifyDown(indexToRemove);
         } else {
@@ -194,7 +196,11 @@ export default class Heap {
   find(item, comparator = this.compare) {
     const foundItemIndices = [];
 
-    for (let itemIndex = 0; itemIndex < this.heapContainer.length; itemIndex += 1) {
+    for (
+      let itemIndex = 0;
+      itemIndex < this.heapContainer.length;
+      itemIndex += 1
+    ) {
       if (comparator.equal(item, this.heapContainer[itemIndex])) {
         foundItemIndices.push(itemIndex);
       }
@@ -227,8 +233,11 @@ export default class Heap {
     let currentIndex = customStartIndex || this.heapContainer.length - 1;
 
     while (
-      this.hasParent(currentIndex)
-      && !this.pairIsInCorrectOrder(this.parent(currentIndex), this.heapContainer[currentIndex])
+      this.hasParent(currentIndex) &&
+      !this.pairIsInCorrectOrder(
+        this.parent(currentIndex),
+        this.heapContainer[currentIndex]
+      )
     ) {
       this.swap(currentIndex, this.getParentIndex(currentIndex));
       currentIndex = this.getParentIndex(currentIndex);
@@ -247,18 +256,23 @@ export default class Heap {
 
     while (this.hasLeftChild(currentIndex)) {
       if (
-        this.hasRightChild(currentIndex)
-        && this.pairIsInCorrectOrder(this.rightChild(currentIndex), this.leftChild(currentIndex))
+        this.hasRightChild(currentIndex) &&
+        this.pairIsInCorrectOrder(
+          this.rightChild(currentIndex),
+          this.leftChild(currentIndex)
+        )
       ) {
         nextIndex = this.getRightChildIndex(currentIndex);
       } else {
         nextIndex = this.getLeftChildIndex(currentIndex);
       }
 
-      if (this.pairIsInCorrectOrder(
-        this.heapContainer[currentIndex],
-        this.heapContainer[nextIndex],
-      )) {
+      if (
+        this.pairIsInCorrectOrder(
+          this.heapContainer[currentIndex],
+          this.heapContainer[nextIndex]
+        )
+      ) {
         break;
       }
 

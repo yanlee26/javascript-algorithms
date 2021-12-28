@@ -1,12 +1,4 @@
-# Doubly Linked List
-
-_Read this in other languages:_
-[_Русский_](README.ru-RU.md),
-[_简体中文_](README.zh-CN.md),
-[_日本語_](README.ja-JP.md),
-[_Português_](README.pt-BR.md),
-[_한국어_](README.ko-KR.md),
-[_Español_](README.es-ES.md),
+# Doubly Linked List 双向链表
 
 In computer science, a **doubly linked list** is a linked data structure that
 consists of a set of sequentially linked records called nodes. Each node contains
@@ -102,9 +94,9 @@ end Reverse Traversal
 
 ## Time Complexity
 
-| Access    | Search    | Insertion | Deletion  |
-| :-------: | :-------: | :-------: | :-------: |
-| O(n)      | O(n)      | O(1)      | O(n)      |
+| Access | Search | Insertion | Deletion |
+| :----: | :----: | :-------: | :------: |
+|  O(n)  |  O(n)  |   O(1)    |   O(n)   |
 
 ### Space Complexity
 

@@ -53,7 +53,7 @@ export default class BinarySearchTreeNode extends BinaryTreeNode {
   }
 
   /**
-   * @param {*} value
+   * @param {*} value 
    * @return {BinarySearchTreeNode}
    */
   find(value) {

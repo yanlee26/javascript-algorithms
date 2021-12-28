@@ -4,7 +4,7 @@ export default class Stack {
   constructor() {
     // We're going to implement Stack based on LinkedList since these
     // structures are quite similar. Compare push/pop operations of the Stack
-    // with prepend/deleteHead operations of LinkedList.
+    // with prepend/deleteHead operations of LinkedList. 链表是最基本的数据结构，可以模拟栈
     this.linkedList = new LinkedList();
   }
 
@@ -34,7 +34,7 @@ export default class Stack {
    */
   push(value) {
     // Pushing means to lay the value on top of the stack. Therefore let's just add
-    // the new value at the start of the linked list.
+    // the new value at the start of the linked list. 栈底加入
     this.linkedList.prepend(value);
   }
 

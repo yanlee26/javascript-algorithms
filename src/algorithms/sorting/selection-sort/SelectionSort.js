@@ -22,6 +22,7 @@ export default class SelectionSort extends Sort {
       }
 
       // If new minimum element has been found then swap it with current i-th element.
+      // 交换
       if (minIndex !== i) {
         [array[i], array[minIndex]] = [array[minIndex], array[i]];
       }

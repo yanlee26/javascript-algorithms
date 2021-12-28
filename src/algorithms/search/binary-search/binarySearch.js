@@ -8,8 +8,12 @@ import Comparator from '../../../utils/comparator/Comparator';
  * @param {function(a, b)} [comparatorCallback]
  * @return {number}
  */
-
-export default function binarySearch(sortedArray, seekElement, comparatorCallback) {
+// 简单实用，一定掌握关键逻辑
+export default function binarySearch(
+  sortedArray,
+  seekElement,
+  comparatorCallback
+) {
   // Let's create comparator from the comparatorCallback function.
   // Comparator object will give us common comparison methods like equal() and lessThen().
   const comparator = new Comparator(comparatorCallback);

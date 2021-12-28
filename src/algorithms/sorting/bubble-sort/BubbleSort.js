@@ -27,7 +27,7 @@ export default class BubbleSort extends Sort {
       }
 
       // If there were no swaps then array is already sorted and there is
-      // no need to proceed.
+      // no need to proceed. 没必要要
       if (!swapped) {
         return array;
       }

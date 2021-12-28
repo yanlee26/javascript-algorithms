@@ -4,6 +4,7 @@
  * @param n
  * @return {number[]}
  */
+// 滑动窗口
 export default function fibonacci(n) {
   const fibSequence = [1];
 

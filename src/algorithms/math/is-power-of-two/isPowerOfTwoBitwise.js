@@ -1,6 +1,7 @@
 /**
  * @param {number} number
  * @return {boolean}
+ * 巧妙利用进制
  */
 export default function isPowerOfTwoBitwise(number) {
   // 1 (2^0) is the smallest power of two.
