@@ -1,4 +1,4 @@
-# Trie 字典树
+# Trie 字典树/
 
 In computer science, a **trie**, also called digital tree and sometimes
 radix tree or prefix tree (as they can be searched by prefixes),

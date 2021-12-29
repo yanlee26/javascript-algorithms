@@ -53,7 +53,7 @@ export default class BinarySearchTreeNode extends BinaryTreeNode {
   }
 
   /**
-   * @param {*} value 
+   * @param {*} value 二叉查找关键方法
    * @return {BinarySearchTreeNode}
    */
   find(value) {
